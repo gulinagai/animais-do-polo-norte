@@ -1,5 +1,4 @@
 import ScrollSuave from './modules/scroll-suave.js'
-import animacaodoscroll from './modules/scroll-animacao.js'
 import iniciarnavaccordionlist from './modules/accordion.js'
 import iniciarnavtab from './modules/tabnav.js'
 import iniciarmodal from './modules/modal.js'
@@ -9,11 +8,12 @@ import iniciarMenuMobile from './modules/menu-mobile.js'
 import iniciarFuncionamento from './modules/funcionamento.js'
 import iniciarFetchAnimais from './modules/fetch-animais.js'
 import iniciarFetchBitcoin from './modules/fetch-bitcoin.js'
+import animacaodoscroll from './modules/scroll-animacao.js'
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]')
 scrollSuave.init()
 
-animacaodoscroll()
+
 iniciarnavaccordionlist()
 iniciarnavtab()
 iniciarmodal()
@@ -23,3 +23,4 @@ iniciarMenuMobile()
 iniciarFuncionamento()
 iniciarFetchAnimais()
 iniciarFetchBitcoin()
+animacaodoscroll()
