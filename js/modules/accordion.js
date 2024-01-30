@@ -1,14 +1,27 @@
-export default function iniciarnavaccordionlist() {
-  const dldt = document.querySelectorAll('[data-anime="accordion"] dt')
-  function clicou() {
-    this.classList.toggle('ativo')
-    this.nextElementSibling.classList.toggle('ativo')
+export default class AccordionList {
+  constructor(list) {
+    this.dldt = document.querySelectorAll(list)
+    this.activeClass = 'ativo'
   }
-  if (dldt.length) {
-    dldt[0].classList.add('ativo')
-    dldt[0].nextElementSibling.classList.add('ativo')
-    dldt.forEach((dt) => {
-      dt.addEventListener('click', clicou)
+
+  toggleAccordion(dt) {
+    dt.classList.toggle(this.activeClass)
+    dt.nextElementSibling.classList.toggle(this.activeClass)
+  }
+
+  // adiciona o evento ao clique ao accordion
+  addAccordionEvent() {
+    this.dldt.forEach((dt) => {
+      dt.addEventListener('click', () => this.toggleAccordion(dt))
     })
+  }
+
+  // iniciar função
+  init() {
+    if (this.dldt.length) {
+      // ativa primeiro item
+      this.toggleAccordion(this.dldt[0])
+      this.addAccordionEvent()
+    }
   }
 }
