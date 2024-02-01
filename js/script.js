@@ -2,7 +2,7 @@ import ScrollSuave from './modules/scroll-suave.js'
 import AccordionList from './modules/accordion.js'
 import TabNav from './modules/tabnav.js'
 import Modal from './modules/modal.js'
-import iniciartooltip from './modules/tooltip.js'
+import Tooltip from './modules/tooltip.js'
 import iniciarDropdownMenu from './modules/dropdown-menu.js'
 import iniciarMenuMobile from './modules/menu-mobile.js'
 import iniciarFuncionamento from './modules/funcionamento.js'
@@ -22,7 +22,9 @@ tabNav.init()
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]')
 modal.init()
 
-iniciartooltip()
+const tooltip = new Tooltip('[data-tooltip]')
+tooltip.init()
+
 iniciarDropdownMenu()
 iniciarMenuMobile()
 iniciarFuncionamento()
