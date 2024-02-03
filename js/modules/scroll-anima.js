@@ -2,25 +2,45 @@ export default class ScrollAnima {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections)
     this.windowMetade = window.innerHeight * 0.6
-    this.animarAoScroll = this.animarAoScroll.bind(this)
+    this.checkDistance = this.checkDistance.bind(this)
+    this.activeClass = 'ativo'
   }
 
-  animarAoScroll() {
-    this.sections.forEach((section) => {
-      const sectiontopo = section.getBoundingClientRect().top
-      const sectionnotopocomp = (sectiontopo - this.windowMetade) < 0
-      if (sectionnotopocomp) {
-        section.classList.add('ativo')
-      } else if (section.classList.contains('ativo')) {
-        section.classList.remove('ativo')
+  // Pega a distância e o elemento de cada section em
+  // relação ao topo do site e retorna em um objeto
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const offset = section.offsetTop
+      return {
+        element: section,
+        offset: Math.floor(offset - this.windowMetade),
+      }
+    })
+  }
+
+  // Verifica a distância em cada objeto
+  // em relação ao scroll do site
+  checkDistance() {
+    this.distance.forEach((section) => {
+      if (window.scrollY > section.offset) {
+        section.element.classList.add(this.activeClass)
+      } else if (section.element.classList.contains(this.activeClass)) {
+        section.element.classList.remove(this.activeClass)
       }
     })
   }
 
   init() {
     if (this.sections.length) {
-      this.animarAoScroll()
-      window.addEventListener('scroll', this.animarAoScroll)
+      this.getDistance()
+      this.checkDistance()
+      window.addEventListener('scroll', this.checkDistance)
     }
+    return this
+  }
+
+  // Remove o event de scroll
+  stop() {
+    window.removeEventListener('scroll', this.checkDistance)
   }
 }
