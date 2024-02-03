@@ -35,3 +35,5 @@ scrollAnima.init()
 iniciarDropdownMenu()
 iniciarMenuMobile()
 iniciarFuncionamento()
+
+ 
