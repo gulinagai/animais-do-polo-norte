@@ -175,8 +175,11 @@ ul{
 }
 
 @media (max-width: 800px) {
+body{
+    background: linear-gradient(to top, #011C41,#12314d 55%, #8cbbd8);
+}
 .grid-container{  
- grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 }
 .menu, .gridsection, .copy {
     grid-column: 1;
