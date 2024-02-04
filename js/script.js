@@ -9,6 +9,7 @@ import iniciarFuncionamento from './modules/funcionamento.js'
 import fetchAnimais from './modules/fetch-animais.js'
 import fetchBitcoin from './modules/fetch-bitcoin.js'
 import ScrollAnima from './modules/scroll-anima.js'
+import DropdownMenu from './modules/dropdown-menu.js'
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]')
 scrollSuave.init()
@@ -32,7 +33,9 @@ fetchBitcoin('https://blockchain.info/ticker', '.btc-preco')
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]')
 scrollAnima.init()
 
-iniciarDropdownMenu()
+const dropdownMenu = new DropdownMenu('[data-dropdown]')
+dropdownMenu.init()
+
 iniciarMenuMobile()
 iniciarFuncionamento()
 
