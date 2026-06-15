@@ -1,26 +1,26 @@
 [
     {
         "specie": "Raposa do Ártico",
-        "total": 7437
+        "total": 630000
     },
     {
         "specie": "Foca-Harpa",
-        "total": 4642
+        "total": 7600000
     },
     {
         "specie": "Urso Polar",
-        "total": 1219
+        "total": 26000
     },
     {
         "specie": "Rena",
-        "total": 1320
+        "total": 2800000
     },
     {
         "specie": "Beluga",
-        "total": 852
+        "total": 150000
     },
     {
         "specie": "Lobo do Ártico",
-        "total": 12543
+        "total": 15000
     }
 ]
